@@ -15,7 +15,7 @@ Install these first:
 | Claude Code | [claude.ai/download](https://claude.ai/download) |
 | Docker Desktop | [docker.com/products/docker-desktop](https://www.docker.com/products/docker-desktop/) |
 
-> **Mac alternative:** Instead of Docker, you can use Apple Container (lighter, native). After setup run `/convert-to-apple-container` in Claude Code.
+> **Apple Container (macOS 26+):** If you're on macOS 26+, you can use Apple Container instead of Docker — it's lighter and native. But it needs extra networking config (sudo pfctl NAT rules). See [APPLE-CONTAINER-NETWORKING.md](APPLE-CONTAINER-NETWORKING.md). After setup run `/convert-to-apple-container` in Claude Code. For most people, **just use Docker** — it works out of the box.
 
 ---
 
@@ -132,6 +132,8 @@ tail -f ~/Library/Logs/nanoclaw.log
 **WhatsApp disconnected:** Send any message — it will reconnect. Or restart the service.
 
 **Container won't build:** Run `claude` then `/debug`.
+
+**Apple Container — no internet from container:** You need to enable IP forwarding + NAT. See [APPLE-CONTAINER-NETWORKING.md](APPLE-CONTAINER-NETWORKING.md).
 
 **Prices not working:** Check your Finnhub key with `@Andy price check`. Re-set with `@Andy set finnhub key NEW_KEY`.
 
